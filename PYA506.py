@@ -14,6 +14,7 @@ def compute(a, b, c):
 
         ans1 = (-b + d ** 0.5) / (2 * a)
         ans2 = (-b - d ** 0.5) / (2 * a)
+        return ans1, ans2
 
 a = int(input())
 b = int(input())
@@ -22,10 +23,13 @@ c = int(input())
 ans = compute(a, b, c)
 
 if ans == None:
-    print("Your equation has no root.")
-else:
-    print("{}, {}".format())
 
-"""
-Your equation has no root.
-"""
+    print("Your equation has no root.")
+
+elif type(ans) is tuple:
+
+    print("{}, {}".format(ans[0], ans[1]))
+
+else:
+
+    print(ans)
